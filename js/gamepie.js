@@ -127,8 +127,8 @@ const GamePie = () => {
                 if (selectedItem.mainBranch == selectedLabel) {
                   document.getElementById('gametitle').textContent = selectedItem.mainBranch;
                   document.getElementById('gamedesc').textContent = selectedItem.description || '';
-                  const resourcesList = document.getElementById('gameresources');
-                  resourcesList.innerHTML = selectedItem.resources ? selectedItem.resources.map(resource => `<li>${resource}</li>`).join('') : '';
+                 // const resourcesList = document.getElementById('gameresources');
+                 // resourcesList.innerHTML = selectedItem.resources ? selectedItem.resources.map(resource => `<img src="../${resource}"/>`).join('') : '';
                 } else {
                   selectedSubmodule = selectedItem.subBranches.find(sub => sub.name === selectedLabel);
                   if (selectedSubmodule) {

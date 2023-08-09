@@ -3,7 +3,7 @@ const AIPie = () => {
         { 
           mainBranch: 'Machine Learning Engineer',
           subBranches: [
-            { name: 'Supervised Learning', description: 'Learn about training models with labeled data. Explore regression and classification algorithms.', resources: ['images/supervizedlearning.png'] },
+            { name: 'Supervised Learning', description: 'Learn about training models with labeled data. Explore regression and classification algorithms.', resources: ['images/supervisedlearning.png'] },
             { name: 'Unsupervised Learning', description: 'Study methods for clustering and dimensionality reduction. Understand techniques like k-means and PCA.', resources: ['images/unsupervisedlearning.png'] },
             { name: 'Deep Learning', description: 'Explore neural networks and deep learning architectures. Familiarize yourself with libraries like TensorFlow and PyTorch.', resources: ['images/deeplearning.png'] },
             { name: 'Model Evaluation', description: 'Understand metrics and techniques for evaluating model performance and generalization.', resources: ['images/models.png'] }
@@ -15,16 +15,16 @@ const AIPie = () => {
         { 
           mainBranch: 'Data Scientist',
           subBranches: [
-            { name: 'Data Analysis', description: 'Learn to clean, preprocess, and visualize data. Use tools like Pandas and Matplotlib.', resources: [''] },
-            { name: 'Statistical Modeling', description: 'Study statistical concepts and methods for analyzing and modeling data.', resources: ['Statistics for Data Science', 'Statistical Inference'] },
-            { name: 'Predictive Analytics', description: 'Apply machine learning techniques to extract insights and predictions from data.', resources: ['Predictive Modeling Overview', 'Feature Engineering Techniques'] },
-            { name: 'Business Understanding', description: 'Understand the domain and use case to formulate data-driven solutions that align with business goals.', resources: ['Data Science for Business', 'CRISP-DM Methodology'] }
+            { name: 'Data Analysis', description: 'Learn to clean, preprocess, and visualize data. Use tools like Pandas and Matplotlib.', resources: ['images/dataanalysis.png'] },
+            { name: 'Statistical Modeling', description: 'Study statistical concepts and methods for analyzing and modeling data.', resources: ['images/stats.png'] },
+            { name: 'Predictive Analytics', description: 'Apply machine learning techniques to extract insights and predictions from data.', resources: ['images/predictive.png'] },
+            { name: 'Business Understanding', description: 'Understand the domain and use case to formulate data-driven solutions that align with business goals.', resources: ['images/buisness.png'] }
           ],
           color: '#e83e8c',
           description: 'Data Scientists collect, analyze, and interpret large datasets to extract valuable insights and inform decision-making.',
           resources: ['Resource 1 for Data Science', 'Resource 2 for Data Science']
         },
-        { 
+        /*{ 
           mainBranch: 'Natural Language Processing Engineer',
           subBranches: [
             { name: 'Text Preprocessing', description: 'Learn techniques to clean and preprocess text data for NLP tasks. Understand tokenization, stemming, and lemmatization.', resources: ['Text Preprocessing Techniques', 'NLTK Tutorials'] },
@@ -35,14 +35,14 @@ const AIPie = () => {
           color: '#e83e8c',
           description: 'NLP Engineers focus on developing algorithms and models to understand, process, and generate human language text.',
           resources: ['Resource 1 for NLP', 'Resource 2 for NLP']
-        },
+        },*/
         { 
           mainBranch: 'Computer Vision Engineer',
           subBranches: [
-            { name: 'Image Processing', description: 'Explore techniques for enhancing and manipulating images. Learn about filters, transformations, and feature extraction.', resources: ['Image Processing Basics', 'OpenCV Tutorials'] },
-            { name: 'Object Detection', description: 'Study methods for detecting and localizing objects in images and videos. Understand algorithms like YOLO and SSD.', resources: ['Object Detection Techniques', 'YOLO Explained'] },
-            { name: 'Image Segmentation', description: 'Learn to segment images into meaningful regions. Explore techniques like semantic and instance segmentation.', resources: ['Image Segmentation Overview', 'Semantic Segmentation with U-Net'] },
-            { name: 'Deep Learning for Vision', description: 'Master deep learning models for vision tasks, including CNNs and architectures like ResNet and VGG.', resources: ['Deep Learning for Computer Vision', 'Convolutional Neural Networks'] }
+            { name: 'Image Processing', description: 'Explore techniques for enhancing and manipulating images. Learn about filters, transformations, and feature extraction.', resources: ['images/imageproccess.png'] },
+            { name: 'Object Detection', description: 'Study methods for detecting and localizing objects in images and videos. Understand algorithms like YOLO and SSD.', resources: ['images/objectdetection.png'] },
+            { name: 'Image Segmentation', description: 'Learn to segment images into meaningful regions. Explore techniques like semantic and instance segmentation.', resources: ['images/imageseg.png'] },
+            { name: 'Deep Learning for Vision', description: 'Master deep learning models for vision tasks, including CNNs and architectures like ResNet and VGG.', resources: ['images/compvision.png'] }
           ],
           color: '#e83e8c',
           description: 'Computer Vision Engineers develop algorithms and models for analyzing and interpreting visual information from images and videos.',
@@ -120,15 +120,15 @@ const AIPie = () => {
                 if (selectedItem.mainBranch == selectedLabel) {
                   document.getElementById('aititle').textContent = selectedItem.mainBranch;
                   document.getElementById('aidesc').textContent = selectedItem.description || '';
-                  const resourcesList = document.getElementById('airesources');
-                  resourcesList.innerHTML = selectedItem.resources ? selectedItem.resources.map(resource => `<li>${resource}</li>`).join('') : '';
+                  //const resourcesList = document.getElementById('airesources');
+                  //resourcesList.innerHTML = selectedItem.resources ? selectedItem.resources.map(resource => `<img src="../${resource}"/>`).join('') : '';
                 } else {
                   selectedSubmodule = selectedItem.subBranches.find(sub => sub.name === selectedLabel);
                   if (selectedSubmodule) {
                     document.getElementById('aititle').textContent = selectedSubmodule.name;
                     document.getElementById('aidesc').textContent = selectedSubmodule.description || '';
                     const resourcesList = document.getElementById('airesources');
-                    resourcesList.innerHTML = selectedSubmodule.resources ? selectedSubmodule.resources.map(resource => `<li>${resource}</li>`).join('') : '';
+                    resourcesList.innerHTML = selectedSubmodule.resources ? selectedSubmodule.resources.map(resource => `<img src="../${resource}"/>`).join('') : '';
                   }
                 }
               }
